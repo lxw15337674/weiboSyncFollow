@@ -175,7 +175,7 @@ const batchFollow = async (list = [], index = 0) => {
     console.log(`[${index + 1}/${list.length}],${res.name},关注成功`)
   })
   if (list.length > 0) {
-    await sleep(1000)
+    await sleep(2000)
     await batchFollow(list, index)
   }
   return list
