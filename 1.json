@@ -1,0 +1,20 @@
+:authority: weibo.com
+:method: POST
+:path: /ajax/friendships/create
+:scheme: https
+accept: application/json, text/plain, */*
+accept-encoding: gzip, deflate, br
+accept-language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+content-length: 60
+content-type: application/json;charset=UTF-8
+cookie: SINAGLOBAL=5922914253661.899.1623332602335; XSRF-TOKEN=Ll3HdnR4zPOskKQ3aw7LV-EM; _s_tentry=weibo.com; Apache=4670877727556.246.1637677373939; ULV=1637677373976:5:1:1:4670877727556.246.1637677373939:1635428402516; TC-V-WEIBO-G0=b09171a17b2b5a470c42e2f713edace0; UOR=www.baidu.com,weibo.com,www.baidu.com; SCF=AkRe1ziM3kZWqPBRu4D9Do1pdIC7TfMyMwcBscgSSDJVj6zQ-opmTrsUIX-QBNCWmiQbHeArOuxjsfepNQEdqt8.; login_sid_t=03aa42117b6a2636f3103c71aa8108e3; cross_origin_proto=SSL; wb_view_log=1920*10801; wvr=6; wb_view_log_6174617595=1920*10801; WBStorage=4d96c54e|undefined; webim_unReadCount=%7B%22time%22%3A1651649535272%2C%22dm_pub_total%22%3A0%2C%22chat_group_client%22%3A0%2C%22chat_group_notice%22%3A0%2C%22allcountNum%22%3A0%2C%22msgbox%22%3A0%7D; PC_TOKEN=7fd02ffd3b; SUB=_2A25Pdlx8DeRhGeBP7FYX8SnJwjmIHXVsAsq0rDV8PUNbmtANLUmlkW9NRSD4CSvWCGcbjMiqa3165frPJKmItB_3; SUBP=0033WrSXqPxfM725Ws9jqgMF55529P9D9Whloi3zRTyvvqXlJGZRO_Jp5JpX5KzhUgL.FoqpS0BceKMf1K-2dJLoIEXLxK-LBKBLBK.LxKBLB.BLB.qLxKML1-2L1hBLxK.LBKeL1--LxKMLB.qL1KBt; ALF=1683185579; SSOLoginState=1651649580; WBPSESS=Dt2hbAUaXfkVprjyrAZT_Mj_q45dHJMK887SkfLy9g2pDIQZCwdLuZa80y3OHpMDpaWs4Zyp9cUQA4nKY3N2N5qaVru9BWBgQgm486UTgtm_xn1MlLF064V37i2p25yhiOs9xYf5JSkQ1hGTRXeCydASjDdYOMjx1aIhUK_1PDiNPmCAw-muTnhA2GGMPAE_Ar5f39FyipvqbOswU1GoQA==
+origin: https://weibo.com
+referer: https://weibo.com/u/1663819761
+sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="101", "Microsoft Edge";v="101"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: same-origin
+traceparent: 00-19b1088ebdc2df20c7a8eb95094c32d0-195ef168ca339a64-00
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41 Safari/537.36 Edg/101.0.1210.32
