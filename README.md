@@ -137,13 +137,11 @@ const getOwnFollowed = async (page = 1, list = []) => {
   }
   return list
 }
-
 const start = async () => {
   const list = await getOwnFollowed()
-  sessionStorage.setItem('followList', JSON.stringify(list))
+  localStorage.setItem('followList', JSON.stringify(list))
   console.log(`获取列表成功,共${list.length}个`);
 }
-
 start()
 ```
 
@@ -156,6 +154,22 @@ let token = ''
 function sleep(time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
+
+const getOwnFollowed = async (page = 1, list = []) => {
+  const res = await fetch(`/ajax/profile/followContent?page=${page}`, {
+    method: 'GET',
+    headers: {
+      "content-type": 'application/json'
+    }
+  }).then(res => res.json())
+  const users = res.data.follows.users
+  if (users.length > 0) {
+    list.push(...users)
+    await getOwnFollowed(++page, list)
+  }
+  return list
+}
+
 const batchFollow = async (list = [], index = 0) => {
   const followUser = list[index++]
   await fetch(`/ajax/friendships/create`, {
@@ -173,18 +187,23 @@ const batchFollow = async (list = [], index = 0) => {
     )
   }).then(res => res.json()).then((res) => {
     console.log(`[${index + 1}/${list.length}],${res.name},关注成功`)
+    if (list.length > 0) {
+      await sleep(2000)
+      await batchFollow(list, index)
+    }
   })
-  if (list.length > 0) {
-    await sleep(1000)
-    await batchFollow(list, index)
-  }
   return list
 }
+
 const start = async (t) => {
   token = t
-  const list = JSON.parse(sessionStorage.getItem('followList'))
-  await batchFollow(list)
+  const list = await getOwnFollowed()
+  let unFollowList = JSON.parse(localStorage.getItem('followList')).filter(unFollowItem => list.findIndex(item => item.id === unFollowItem.id) === -1)
+  console.log(`获取待关注列表成功,共${unFollowList.length}个`);
+  await batchFollow(unFollowList)
 }
+
 start()
+
 ```
 

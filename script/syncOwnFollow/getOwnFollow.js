@@ -14,11 +14,9 @@ const getOwnFollowed = async (page = 1, list = []) => {
   }
   return list
 }
-
 const start = async () => {
   const list = await getOwnFollowed()
-  sessionStorage.setItem('followList', JSON.stringify(list))
+  localStorage.setItem('followList', JSON.stringify(list))
   console.log(`获取列表成功,共${list.length}个`);
 }
-
 start()
