@@ -185,7 +185,7 @@ const batchFollow = async (list = [], index = 0) => {
       page: "profile"
     }
     )
-  }).then(res => res.json()).then((res) => {
+  }).then(res => res.json()).then(async (res) => {
     console.log(`[${index + 1}/${list.length}],${res.name},关注成功`)
     if (list.length > 0) {
       await sleep(2000)
@@ -203,7 +203,6 @@ const start = async (t) => {
   await batchFollow(unFollowList)
 }
 
-start()
-
+start("(复制的token)") //例如：start("ApMq0KHPGo3SBclIGe6dMpn7")
 ```
 
