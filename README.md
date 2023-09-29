@@ -116,7 +116,6 @@ start("(复制的token)") //例如：start("ApMq0KHPGo3SBclIGe6dMpn7")
 
 
 ### 方案2
-> todo：过滤关注过的用户
 1. 前往[微博首页](https://www.weibo.com/)，登录A账号
 2. `F12`打开开发者工具，在控制台输入以下代码，等待控制台提示成功。
 
@@ -139,7 +138,9 @@ const getOwnFollowed = async (page = 1, list = []) => {
 }
 const start = async () => {
   const list = await getOwnFollowed()
-  localStorage.setItem('followList', JSON.stringify(list))
+  localStorage.setItem('followList', JSON.stringify(list.map(item => {
+    return { id: item.id }
+  })))
   console.log(`获取列表成功,共${list.length}个`);
 }
 start()

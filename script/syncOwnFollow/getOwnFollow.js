@@ -16,7 +16,9 @@ const getOwnFollowed = async (page = 1, list = []) => {
 }
 const start = async () => {
   const list = await getOwnFollowed()
-  localStorage.setItem('followList', JSON.stringify(list))
+  localStorage.setItem('followList', JSON.stringify(list.map(item => {
+    return { id: item.id }
+  })))
   console.log(`获取列表成功,共${list.length}个`);
 }
 start()
