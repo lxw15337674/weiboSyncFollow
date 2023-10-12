@@ -147,8 +147,9 @@ start()
 ```
 
 3. 退出 A 账号，登录 B 账号
-4. `F12`打开开发者工具，在网络中选择任意一个请求，找到请求头中的**x-xsrf-token**，复制`：`后的内容，
-5. 在控制台粘贴以下代码，并填入上一步得到的token，回车执行代码，等待控制台提示成功。
+4. `F12`打开开发者工具，在应用程序中找到，找到请求头中的**x-xsrf-token**的值：
+   ![csrf-token位置](https://github.com/lxw15337674/weiboSyncFollow/assets/19898669/d5691f35-9d14-41a6-855d-8d6d9de3eecb)
+6. 在控制台粘贴以下代码，并填入上一步得到的token，回车执行代码，等待控制台提示成功。
 
 ```javascript
 let token = ''
@@ -206,4 +207,5 @@ const start = async (t) => {
 
 start("(复制的token)") //例如：start("ApMq0KHPGo3SBclIGe6dMpn7")
 ```
+
 
